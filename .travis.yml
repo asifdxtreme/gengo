@@ -5,7 +5,7 @@ go:
 go_import_path: k8s.io/gengo
 
 jobs:
-  includes:
+  include:
     - stage: Run UT
       script: find . -name Makefile | xargs -n1 dirname | while read DIR; do make -C $DIR test; done && go test -v ./...
     - stage: Run Examples
